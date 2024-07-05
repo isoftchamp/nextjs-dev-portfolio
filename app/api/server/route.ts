@@ -8,7 +8,7 @@ export async function POST(req: Request) {
 
   const params = await req.json();
   const { token } = params;
-  const secretKey: string = process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY || "";
+  const secretKey: string = process.env.RECAPTCHA_SECRET_KEY || "";
 
   if (!token) {
     return new Response(
